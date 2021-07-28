@@ -1,0 +1,19 @@
+# На примере функции нужно изменить список pds в коде!
+
+
+# Это список изменяется! Как пример:
+ lis_of_dict = [{"колбаса": 7900, "мясо": 14500, "мороженое": 1750}, {"яйца": 2450, "рыба": 8450, "творог": 1950},
+                {"квас": 1210, "фанта": 2770, "вода": 1320}]
+
+
+ def change_dicts(lis_of_dict):
+     def change_dict(dict):
+         keys = list(dict.keys())
+         key = keys[1]
+         dict[key] = dict[keys[1]] / 100
+         return dict
+
+     return [change_dict(dict) for dict in lis_of_dict if len(dict) > 1]
+
+
+ products = change_dicts(lis_of_dict)
